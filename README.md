@@ -24,7 +24,8 @@ function createAndBeautifyFile(content) {
 	return function() {
 		this.touch('index.js').write(content);
 		return this.run('jsbeautifier', {
-			file: this.touch('index.js').fullname
+			file: this.touch('index.js').fullname,
+			forceOverride: true
 		}).then(function() {
 			return true;
 		});
@@ -34,3 +35,6 @@ function createAndBeautifyFile(content) {
 
 # Author
 Vladimir Kalmykov <vladimirmorulus@gmail.com>
+
+# License
+MIT, 2016

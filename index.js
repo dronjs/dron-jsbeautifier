@@ -20,17 +20,23 @@ function dronJsbeautifier(file, options) {
 		var content = beautify(file.read(), Object.assign({
 			indent_size: 2
 		}, options||{}));
-		console.log(content);
-		return this.run('confirm', {
-			question: 'Do you like?'
-		}).then(function(a) {
-			if (a) {
-				file.write(content);
-				return true;
-			} else {
-				return null;
-			}
-		});
+		
+		if (options.forceOverride) {
+			file.write(content);
+			return true;
+		} else {
+			console.log(content);
+			return this.run('confirm', {
+				question: 'Do you like?'
+			}).then(function(a) {
+				if (a) {
+					file.write(content);
+					return true;
+				} else {
+					return null;
+				}
+			});
+		}
 	}
 }
 

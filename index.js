@@ -53,6 +53,6 @@ function validate(filename, options) {
 }
 
 module.exports = function factory(argv) {
-	var fileName = "string"===typeof argv._[1] ? argv._[1] : (argv.file || false);
+	var fileName = argv._&&"string"===typeof argv._[1] ? argv._[1] : (argv.file || false);
 	return validate(fileName, argv);
 }

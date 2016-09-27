@@ -1,0 +1,21 @@
+{
+  "name": "dron-jsbeautifier",
+  "version": "0.0.1",
+  "dron": {
+    "version": "0.0.1"
+  },
+  "description": "Fast beautify target file",
+  "keywords": [
+    "dron",
+    "module"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vladimir Kalmykov <vladimirmorulus@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "js-beautify": "^1.6.4"
+  }
+}
